@@ -37,6 +37,11 @@ const LoginForm = () => {
         title: "Login Successful!",
         description: `Welcome back, ${validatedData.email}`,
       });
+      
+      // Navigate to dashboard after successful login
+      setTimeout(() => {
+        window.location.href = '/dashboard';
+      }, 1000);
     } catch (error) {
       if (error instanceof z.ZodError) {
         const fieldErrors: Record<string, string> = {};
